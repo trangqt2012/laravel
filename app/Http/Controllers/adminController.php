@@ -11,10 +11,13 @@ class adminController extends Controller
     {
         $user = User::showAccount();
         if(isset($_GET['act'])) {
-            $user = array_filter($user, function ($var) {
+            $user = array_reduce($user, function ($value, $var) {
                $infunc = (array) $var;
-               return ($infunc['permission'] == $_GET['act']);
-        });
+               if ($infunc['permission'] == $_GET['act']) {
+                   $value[] = $infunc['name'];
+               }
+               return $value;
+        }, []);
         }
         return view('admin/home', ['user' => $user]);
     }
