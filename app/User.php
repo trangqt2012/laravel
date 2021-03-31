@@ -39,27 +39,14 @@ class User extends Authenticatable
     ];
     public static function checkLogin($name, $pass)
     {
-        $login = DB::table('users')->where([['name', $name], ['password', $pass]])->first();
-        return $login;
+        return $login = DB::table('users')->where([['name', $name], ['password', $pass]])->first();
     }
     public static function userByID($id)
     {
-        $user = DB::table('users')->where('id',$id)->first();
-        return $user;
+        return $user = DB::table('users')->where('id',$id)->first();
     }
     public static function showAccount()
     {
-        $user = DB::table('users')->get();
-        return $user;
-    }
-    public static function showAccountUser()
-    {
-        $user = DB::table('users')->where('permission',0)->get();
-        return $user;
-    }
-    public static function showAccountAdmin()
-    {
-        $user = DB::table('users')->where('permission',1)->get();
-        return $user;
+        return $user = DB::table('users')->get() -> toArray();
     }
 }

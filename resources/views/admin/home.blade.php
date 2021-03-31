@@ -19,8 +19,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Danh sách Người dùng</h4>
-                        <a href="{{URL::to('/admin/user')}}" class="btn btn-success">User</a>
-                        <a href="{{URL::to('/admin/admin')}}" class="btn btn-success">Admin</a>
+                        <a href="{{URL::to('/admin?act=0')}}" class="btn btn-success">User</a>
+                        <a href="{{URL::to('/admin?act=1')}}" class="btn btn-success">Admin</a>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>

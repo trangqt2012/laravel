@@ -21,5 +21,4 @@ Route::get('/login', 'userController@login');
 Route::post('/login', 'userController@checkLogin');
 
 Route::get('/admin', 'adminController@showAccount');
-Route::get('/admin/user', 'adminController@showAccountUser');
-Route::get('/admin/admin', 'adminController@showAccountAdmin');
+

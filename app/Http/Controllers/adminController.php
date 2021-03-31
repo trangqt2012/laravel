@@ -10,16 +10,12 @@ class adminController extends Controller
     public function showAccount()
     {
         $user = User::showAccount();
-        return view('admin/home', ['user'=>$user]);
-    }
-    public function showAccountUser()
-    {
-        $user = User::showAccountUser();
-        return view('admin/home', ['user'=>$user]);
-    }
-    public function showAccountAdmin()
-    {
-        $user = User::showAccountAdmin();
-        return view('admin/home', ['user'=>$user]);
+        if(isset($_GET['act'])) {
+            $user = array_filter($user, function ($var) {
+               $infunc = (array) $var;
+               return ($infunc['permission'] == $_GET['act']);
+        });
+        }
+        return view('admin/home', ['user' => $user]);
     }
 }

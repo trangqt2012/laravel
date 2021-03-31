@@ -155,7 +155,7 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Đăng nhập</h5>
-                        <form class="form-signin" method="post" action="/login">
+                        <form class="form-signin" method="post" action="{{URL::to('/login')}}">
                             @csrf
                             <div class="form-label-group">
                                 <input id="inputEmail" name="name" class="form-control" placeholder="Email address"
