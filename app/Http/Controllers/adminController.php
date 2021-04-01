@@ -19,6 +19,6 @@ class adminController extends Controller
                return $value;
         }, []);
         }
-        return view('admin/home', ['user' => $user]);
+        return $user;
     }
 }
